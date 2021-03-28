@@ -4,7 +4,14 @@ import A from './A/A'
 import B from './B/b'
 import './index.css'
 // 组件传值 + interface
-export default class App extends React.Component {
+interface IProps {
+    name: string;
+    age: number;
+}
+interface IState {
+    name: string
+}
+export default class App extends React.Component<IProps, IState> {
     state = {
         name: 'bobo'
     }
@@ -24,7 +31,6 @@ export default class App extends React.Component {
                             <Route path="/b" component={B}></Route>
                         </Switch>
                     </HashRouter>
-                <button onClick={this.back}>back</button>
             </div>
         )
     }
